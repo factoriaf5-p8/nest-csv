@@ -14,6 +14,6 @@ export class AppService {
     console.log(process.cwd())
     const filePath = process.cwd() + '/data/data.csv';
 
-    return this.dataSource.query(`LOAD DATA INFILE "${filePath}" INTO TABLE decidim.data FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r' IGNORE 1 LINES;`)
+    return this.dataSource.query(`LOAD DATA INFILE "${filePath}" INTO TABLE decidim.data FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 LINES;`)
   }
 }
